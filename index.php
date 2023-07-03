@@ -108,8 +108,8 @@ window.addEventListener('load', function () {
             "notice" => "Re05 - <b class='text-danger'>[Domain]</b> - Theo dõi ngày hết hạn Domains - <a href='https://crm.jaybranding.com/admin/knowledge_base/view/huong-dan-cap-nhat-report-04-re04'>Hướng dẫn cập nhật report</a>"
           ],
           "welcome" => [
-            "sql" => "SELECT * FROM admin_crm.tbltickets_predefined_replies",
-            "notice" => "Re05 - <b class='text-danger'>[Domain]</b> - Theo dõi ngày hết hạn Domains - <a href='https://crm.jaybranding.com/admin/knowledge_base/view/huong-dan-cap-nhat-report-04-re04'>Hướng dẫn cập nhật report</a>",
+            "sql" => "SELECT * FROM tbltickets_predefined_replies",
+            // "notice" => "Re05 - <b class='text-danger'>[Domain]</b> - Theo dõi ngày hết hạn Domains - <a href='https://crm.jaybranding.com/admin/knowledge_base/view/huong-dan-cap-nhat-report-04-re04'>Hướng dẫn cập nhật report</a>",
             "pageTitle" => "Vui lòng chọn report trong thanh bên dưới:"
           ],
         ];
@@ -208,7 +208,7 @@ window.addEventListener('load', function () {
 <?php 
 //dashboard info
     if($reportCode == "welcome"){
-        if($_GET["mail"] == "sent"){
+        if($dfQueryStr_config['mail'] == "sent"){
             displayNotice("<span class='text-success'>Email Sent</span>","📤 Email sent successfully!");
         } 
 

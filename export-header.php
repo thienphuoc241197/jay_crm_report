@@ -40,7 +40,7 @@ echo "<p class='text-center'>{$notice}</p>" ;
 <button id="searchBoxbtn">+</button>
 
 <div class="form-group row justify-content-center align-items-center align-baseline searchRow" id="searchBoxContent">
-    <div class="col-md-6 col-sm-auto my-2" style="min-height: 100px">
+    <div class="col-md-4 col-sm-auto" style="min-height: 100px">
     <div class="input-group">
     <div class="input-group-prepend">
       <div class="input-group-text" id="btnGroupAddon">.<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -67,8 +67,11 @@ echo "<p class='text-center'>{$notice}</p>" ;
 
     </div>
 
+    <div class="col-sm-auto py-2" style="min-height: 100px">
+    <p class="text-center">Version <strong class="text-danger">1.01</strong></p>
+    </div>
 
-    <div class=" col-sm-auto my-2" style="min-height: 100px">
+    <div class=" col-sm-auto" style="min-height: 100px">
     
 
 
