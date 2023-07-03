@@ -1,0 +1,243 @@
+#selectReport.sales-level-report > option {
+  display: none;
+}
+#selectReport.sales-level-report > option[value="re02c"],
+#selectReport.sales-level-report > option[value="re04"] {
+  display: block !important;
+}
+#selectReport.admin-level-report > option {
+  display: block !important;
+}
+#myTable {
+  display: table;
+}
+
+.sales-level-report[href*="re01"],
+.sales-level-report[href*="welcome"],
+.sales-level-report[href*="re05"] {
+  display: none;
+}
+
+div.container-fluid.main {
+  display: none;
+}
+
+div.loader {
+  position: fixed;
+  height: 100vh;
+  background: white;
+}
+
+status {
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+}
+
+status.estimate,
+status.exp {
+  /*opacity: 0.5;*/
+  font-size: 50%;
+}
+status.project.ps1:after {
+  content: " Not Start";
+}
+status.project.ps51:after {
+  content: " Pend.";
+}
+
+status.project.ps4:after {
+  content: " Done";
+}
+
+status.project.ps2:after {
+  content: " Process";
+}
+
+status.project.ps3:after {
+  content: " OnHold";
+}
+
+status.estimate.e1:after {
+  content: " Chưa Thanh Toán";
+}
+
+status.estimate.e2:after {
+  content: " Paid";
+}
+
+status.estimate.e3:after {
+  content: " Thanh Toán 1 Phần";
+}
+
+status.estimate.e4:after {
+  content: " Nợ Quá Hạn";
+}
+
+status.exp.ĐãChuyểnKhoản,
+status.project.ps51,
+status.project.ps4,
+status.estimate.e2 {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+status.exp.ĐãChuyểnKhoản:before,
+status.project.ps51:before,
+status.project.ps4:before {
+  content: "⭐";
+}
+status.project.ps3,
+status.estimate.e4,
+status.exp.TrìnhDuyệtGiámĐốc {
+  background-color: var(--warning);
+  color: var(--white);
+}
+
+status.project.ps3:before,
+status.exp.GiámĐốcOKChuyểnTiền:before {
+  content: "⏰";
+}
+
+status.project.ps2,
+status.estimate.e1,
+status.exp.TrìnhDuyệtKếToán {
+  background-color: var(--info);
+  color: var(--white);
+}
+status.project.ps2:before,
+status.exp.TrìnhDuyệtGiámĐốc:before {
+  content: "💪";
+}
+
+status.project.ps1,
+status.estimate.e3,
+status.exp.GiámĐốcOKChuyểnTiền {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+status.project.ps1:before,
+status.exp.TrìnhDuyệtKếToán:before {
+  content: "🤍";
+}
+
+/* #searchBoxContent > div:nth-child(3) {
+  display: none; 
+} */
+td {
+  font-size: 12px;
+}
+bank {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  scrollbar-width: thin;
+}
+.expand {
+  display: inline;
+}
+.expand:hover,
+.expand:focus {
+  cursor: pointer;
+  border-radius: 3px;
+}
+.expand:focus .note,
+.expand:hover .note {
+  display: block;
+  width: 250px;
+  min-height: 100px;
+  padding: 10px;
+  position: absolute;
+  transform: translateX(30px);
+  background: #ffffff;
+  border: solid 1px var(--gray-500);
+  border-radius: 5px;
+}
+
+.note {
+  width: 0px;
+  transition: 0.1s;
+  position: absolute;
+  display: none;
+}
+.expand:before {
+  content: "+";
+  padding: 2px 5px;
+  margin: 5px;
+  border: solid 1px var(--gray);
+  background: white;
+  border-radius: 3px;
+}
+.expand:focus:before,
+.expand:hover:before {
+  content: "+";
+  padding: 2px 5px;
+  margin: 5px;
+  border: solid 1px var(--gray);
+  background: var(--info);
+  border-radius: 3px;
+}
+
+.expandall {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+nextamount {
+  color: var(--primary);
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+.lastRow td {
+  font-weight: bold;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+#searchBoxbtn {
+  display: none;
+}
+tr.hide {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .searchRow .row,
+  .btn-row .row {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  /* 
+  #searchBoxbtn {
+    border: solid 1px var(--primary);
+    background: var(--primary);
+    border-radius: 50%;
+    color: white;
+    display: block;
+  }
+
+  #searchBox {
+    position: fixed;
+    bottom: 10px;
+    z-index: 1000;
+  }
+  #searchBoxContent {
+    background: white;
+    display: none;
+  } */
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <date>2022-11-24</date>
+    <script>
+      $(document).ready(function () {
+        data = $("date").text();
+        data2 = Date.parse(data);
+        console.log(data2);
+        console.log(Date.now());
+
+        var date = new Date();
+
+        // add a day
+        date.setDate(date.getDate() + 1);
+
+        console.log(date);
+
+        var mydate = new Date("2014-04-03");
+        mydate.setDate(mydate.getDate() + 1);
+
+        console.log(mydate);
+      });
+    </script>
+  </body>
+</html>
