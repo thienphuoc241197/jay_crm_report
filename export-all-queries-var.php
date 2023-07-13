@@ -708,7 +708,7 @@
     $reportDashboardFullYear = <<<SQLSTRING
 
     SELECT 
-        tet.ymdate AS 'YearMonth', /*tpt.ymsum as 'Proposal',*/ tet.ymsum as 'Estimate', tit.ymsum as 'Invoice', tipt.ymsum as 'Payment', tex.ymsum as 'Expense'
+        tet.ymdate AS 'YearMonth', /*tpt.ymsum as 'Proposal',*/ FORMAT(tet.ymsum,0) as 'Estimate', FORMAT(tit.ymsum,0) as 'Invoice', FORMAT(tipt.ymsum,0) as 'Payment', FORMAT(tex.ymsum,0) as 'Expense'
     FROM
         (SELECT 
             DATE_FORMAT(date, '%Y-%m') AS ymdate,
@@ -795,7 +795,11 @@
 
     $reportDashboardPayment4weeks = <<<SQLSTRING
 
-    SELECT  STR_TO_DATE(CONCAT(YEARWEEK(CURDATE()),' Sunday'), '%X%V %W') as 'From Date', tbtw.amtw  as 'Payment TW', tb1.am1  as 'Payment-1w', tb2.am2  as 'Payment-2w', tb3.am3  as 'Payment-3w'
+    SELECT STR_TO_DATE(CONCAT(YEARWEEK(CURDATE()),' Sunday'), '%X%V %W') as 'From Date', 
+    FORMAT(tbtw.amtw, 0) AS 'Payment TW',
+    FORMAT(tb1.am1, 0) AS 'Payment-1w',
+    FORMAT(tb2.am2, 0) AS 'Payment-2w',
+    FORMAT(tb3.am3, 0) AS 'Payment-3w'
     FROM tblinvoicepaymentrecords as tb1,
     (
     SELECT sum(ceiling(amount)) as amtw
@@ -825,7 +829,7 @@
     $reportDashboardThisMonth = <<<SQLSTRING
 
     SELECT 
-        tet.ymdate AS 'YearMonth', /*tpt.ymsum as 'Proposal',*/ tet.ymsum as 'Estimate', tit.ymsum as 'Invoice', tipt.ymsum as 'Payment', tex.ymsum as 'Expense'
+        tet.ymdate AS 'YearMonth', /*tpt.ymsum as 'Proposal',*/ FORMAT(tet.ymsum,0) as 'Estimate', FORMAT(tit.ymsum,0) as 'Invoice', FORMAT(tipt.ymsum,0) as 'Payment', FORMAT(tex.ymsum,0) as 'Expense'
     FROM
         (SELECT 
             DATE_FORMAT(date, '%Y-%m') AS ymdate,
