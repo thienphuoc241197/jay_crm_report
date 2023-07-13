@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="export.css">
 <script type="text/javascript" id="tinymce-js" src="https://crm.jaybranding.com/assets/plugins/tinymce/tinymce.min.js?v=2.9.3"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
@@ -226,18 +226,19 @@ window.addEventListener('load', function () {
         //payment 4 weeks
         $sql = $reportDashboardPayment4weeks;
         $result = mysqli_query($link_sqli, $sql, MYSQLI_USE_RESULT);  
-        //exportHTMLtable($result); 
-        convertObject($result,"03");
+        exportHTMLtable($result); 
+        // convertObject($result,"03");
 
         //output reportdashboard1 table ym
         $sql = $reportDashboardThisMonth;
         $result = mysqli_query($link_sqli, $sql, MYSQLI_USE_RESULT);  
-        //exportHTMLtable($result); 
-        convertObject($result,"01");
+        exportHTMLtable($result); 
+        // convertObject($result,"01");
 
         $sql = $reportDashboardFullYear;
         $result = mysqli_query($link_sqli, $sql, MYSQLI_USE_RESULT);    
-        convertObject($result,"02");
+        // convertObject($result,"02");
+        exportHTMLtable($result); 
         exit;
     } else
 

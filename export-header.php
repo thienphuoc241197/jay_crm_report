@@ -299,7 +299,7 @@ function convertObject($result,$chartid){
 
 
   # If records not found
-  if( !(count($resultset > 0 ))) {
+  if( !(count($resultset) > 0)) {
         exit;// if json not found
   } else {
 
@@ -309,6 +309,9 @@ function convertObject($result,$chartid){
                 // output data of each row
                 //$last_key = end(array_keys($resultset));
 
+                $firstCol = '';
+                $otherCols = '';
+                $chartCount = '';
                 foreach ($columns as $k => $column_name ) :
 
                   if ($k != 0){
@@ -386,8 +389,6 @@ function convertObject($result,$chartid){
               echo $drawChart;
                 
              } 
-
-
   }
 
 // end output object table
