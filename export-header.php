@@ -68,7 +68,7 @@ echo "<p class='text-center'>{$notice}</p>" ;
     </div>
 
     <div class="col-sm-auto py-2" style="min-height: 100px">
-    <p class="text-center">Version <strong class="text-danger">1.01</strong></p>
+    <p class="text-center">Version <strong class="text-danger">1.02</strong></p>
     </div>
 
     <div class=" col-sm-auto" style="min-height: 100px">
@@ -271,7 +271,22 @@ function bulkEdit(){
   $xhtml .= '<form action="export-bulk-update.php" class="form-group" method="POST" id="form3">
   <textarea required class="form-control expno" placeholder="Exp No. với dấu phẩy. ví dụ: 123,456,890" name="expno"></textarea>
   <input type="hidden" name="fieldid" value="12" />
-  <input type="submit" class="btn btn-primary" value="form3" name="formName" form="form3"/>';
+  <input type="submit" class="btn btn-primary" value="form3" name="formName" form="form3"/>
+  </form>';
+
+  $xhtml .= '</div>';
+
+  $xhtml .= '<hr>';
+  $xhtml .= '<h4>Edit Actual Paid Date</h4>';
+  $xhtml .= '<div class="container">';
+
+  $xhtml .= '<form action="export-bulk-update.php" class="form-group" method="POST" id="form4">
+  <textarea required class="form-control expno" placeholder="Exp No. với dấu phẩy. ví dụ: 123,456,890" name="expno"></textarea>
+  Chọn ngày thay đổi: <input type="date" name="apd" />
+  <br />
+  <input type="hidden" name="fieldid" value="24" />
+  <input type="submit" class="btn btn-primary" value="form4" name="formName" form="form4"/>
+  </form>';
 
   $xhtml .= '</div>';
 
